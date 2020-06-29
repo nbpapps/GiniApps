@@ -66,11 +66,9 @@ final class MainViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }
-    
 }
 
 extension MainViewController : UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width/4
         let height = shownNumbersViewModel.height(at: indexPath.row)
@@ -79,8 +77,6 @@ extension MainViewController : UICollectionViewDelegate,UICollectionViewDelegate
 }
 
 extension MainViewController : UICollectionViewDataSource {
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shownNumbersViewModel.numberOfItems
@@ -103,10 +99,7 @@ extension MainViewController : UICollectionViewDataSource {
             cell.setupCell(with: shownNumbersViewModel.number(at: indexPath.row))
             return cell
         }
-        
     }
-    
-    
 }
 
 

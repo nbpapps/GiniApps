@@ -48,9 +48,9 @@ extension ShownNumbersViewModel {
     }
     
     private func checkForZeroSum(on array : [Number]) {
-        
-        shownNumbers.append(ShownNumber(number: array[0].number,height: 50))//setup the first element in the shown array
-        
+                
+        shownNumbers.append(ShownNumber(number: array[0].number, height: 50))
+
         //we go thru the numbers we received to find any two which sum to zero.
         for i in 0..<array.count {
             for j in i+1..<array.count {

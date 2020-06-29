@@ -19,5 +19,5 @@ struct ShownNumberType {
 
 struct ShownNumber {
     var number : Int
-    var height : ShownNumberType
+    var height : Int
 }
