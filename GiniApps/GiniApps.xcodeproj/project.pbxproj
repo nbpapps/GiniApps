@@ -74,7 +74,6 @@
 		E82E407924A9CC92009D777C /* GiniApps */ = {
 			isa = PBXGroup;
 			children = (
-				E82E40A724A9D936009D777C /* Utils */,
 				E82E409F24A9D426009D777C /* CustomViews */,
 				E82E40AA24A9E03B009D777C /* ViewModel */,
 				E82E409A24A9D24C009D777C /* Models */,
@@ -140,13 +139,6 @@
 				E82E40A224A9D470009D777C /* LowOrangeCollectionViewCell.swift */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		E82E40A724A9D936009D777C /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		E82E40AA24A9E03B009D777C /* ViewModel */ = {

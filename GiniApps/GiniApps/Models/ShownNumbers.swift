@@ -8,11 +8,16 @@
 
 import Foundation
 
-enum ShownNumberType {
-    case zeroSumNumber(height : Int)
+enum ShownNumberTypeHeight : Int {
+    case sumEqualZero = 100
+    case sumNotEqualZero = 50
+}
+
+struct ShownNumberType {
+    var shownNumberTypeHeight : ShownNumberTypeHeight
 }
 
 struct ShownNumber {
     var number : Int
-    var height : Int
+    var height : ShownNumberType
 }
