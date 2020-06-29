@@ -12,7 +12,7 @@ import MyViewsCustomized
 final class LowOrangeCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "LowOrangeCollectionViewCell"
-
+    
     let textLabel = NBPLabel(textAlignment: .center, fontSize: 20.0, weight: .regular, color: .black)
     
     override init(frame: CGRect) {

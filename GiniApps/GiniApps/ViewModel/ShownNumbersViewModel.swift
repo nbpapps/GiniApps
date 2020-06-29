@@ -48,10 +48,10 @@ extension ShownNumbersViewModel {
     }
     
     private func checkForZeroSum(on array : [Number]) {
-//        var zeroSumNumbers = [Int]()
-        print(array.count)
+        
         shownNumbers.append(ShownNumber(number: array[0].number,height: 50))//setup the first element in the shown array
-
+        
+        //we go thru the numbers we received to find any two which sum to zero.
         for i in 0..<array.count {
             for j in i+1..<array.count {
                 if i == 0 {
@@ -59,16 +59,13 @@ extension ShownNumbersViewModel {
                     shownNumbers.append(ShownNumber(number: array[j].number,height: 50))
                 }
                 if array[i].number + array[j].number == 0 {
-                    print("\(i) and \(j)" )
                     shownNumbers.remove(at: i)
                     shownNumbers.insert(ShownNumber(number: array[i].number,height: 100), at: i)
                     shownNumbers.remove(at: j)
-                     shownNumbers.insert(ShownNumber(number: array[j].number,height: 100), at: j)
-//                    zeroSumNumbers.append(i)
-//                    zeroSumNumbers.append(j)
+                    shownNumbers.insert(ShownNumber(number: array[j].number,height: 100), at: j)
+                    break // since numbers appear only once, we can stop this iteration
                 }
             }
         }
-        print(shownNumbers.count)
     }
 }

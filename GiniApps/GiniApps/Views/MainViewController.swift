@@ -31,7 +31,7 @@ final class MainViewController: UIViewController {
         requestArrayData()
     }
     
-
+    
     //MARK: - request data
     private func requestArrayData() {
         shownNumbersViewModel.requestArray { [weak self](error) in
@@ -87,7 +87,7 @@ extension MainViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
+        
         let height = shownNumbersViewModel.height(at: indexPath.row)
         if height == 100 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HighRedCollectionViewCell.reuseId, for: indexPath) as? HighRedCollectionViewCell else {

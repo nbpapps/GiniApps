@@ -8,11 +8,6 @@
 
 import Foundation
 
-//enum HeightForCell : Int {
-//    case zeroSum = 100
-//    case nonZeroSum = 50
-//}
-
 enum ShownNumberType {
     case zeroSumNumber(height : Int)
 }
