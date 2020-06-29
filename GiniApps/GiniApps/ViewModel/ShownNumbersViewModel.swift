@@ -20,8 +20,12 @@ final class ShownNumbersViewModel {
         String(shownNumbers[row].number)
     }
     
+    func typeAndNumber(at row : Int) -> (heightType : ShownNumberTypeHeight, number : String) {
+        (shownNumbers[row].height, String(shownNumbers[row].number))
+    }
+    
     func height(at row : Int) -> CGFloat {
-        CGFloat(integerLiteral: shownNumbers[row].height)
+        CGFloat(integerLiteral: shownNumbers[row].height.rawValue)
     }
 }
 
@@ -48,21 +52,21 @@ extension ShownNumbersViewModel {
     }
     
     private func checkForZeroSum(on array : [Number]) {
-                
-        shownNumbers.append(ShownNumber(number: array[0].number, height: 50))
-
+        
+        shownNumbers.append(ShownNumber(number: array[0].number, height: .sumNotEqualZero))
+        
         //we go thru the numbers we received to find any two which sum to zero.
         for i in 0..<array.count {
             for j in i+1..<array.count {
                 if i == 0 {
                     //we setup the shown numbers only on the first pass. we init all of them with
-                    shownNumbers.append(ShownNumber(number: array[j].number,height: 50))
+                    shownNumbers.append(ShownNumber(number: array[j].number,height: .sumNotEqualZero))
                 }
                 if array[i].number + array[j].number == 0 {
                     shownNumbers.remove(at: i)
-                    shownNumbers.insert(ShownNumber(number: array[i].number,height: 100), at: i)
+                    shownNumbers.insert(ShownNumber(number: array[i].number,height: .sumEqualZero), at: i)
                     shownNumbers.remove(at: j)
-                    shownNumbers.insert(ShownNumber(number: array[j].number,height: 100), at: j)
+                    shownNumbers.insert(ShownNumber(number: array[j].number,height: .sumEqualZero), at: j)
                     break // since numbers appear only once, we can stop this iteration
                 }
             }
