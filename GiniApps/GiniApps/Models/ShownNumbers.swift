@@ -13,11 +13,7 @@ enum ShownNumberTypeHeight : Int {
     case sumNotEqualZero = 50
 }
 
-struct ShownNumberType {
-    var shownNumberTypeHeight : ShownNumberTypeHeight
-}
-
 struct ShownNumber {
     var number : Int
-    var height : Int
+    var height : ShownNumberTypeHeight
 }

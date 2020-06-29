@@ -84,19 +84,22 @@ extension MainViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let height = shownNumbersViewModel.height(at: indexPath.row)
-        if height == 100 {
+        let showType = shownNumbersViewModel.typeAndNumber(at: indexPath.row)
+        
+        switch showType.type {
+        case .sumEqualZero:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HighRedCollectionViewCell.reuseId, for: indexPath) as? HighRedCollectionViewCell else {
                 preconditionFailure("incorrect cell")
             }
-            cell.setupCell(with: shownNumbersViewModel.number(at: indexPath.row))
+            cell.setupCell(with: showType.number)
             return cell
-        }else{
+            
+        case .sumNotEqualZero:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LowOrangeCollectionViewCell.reuseId, for: indexPath) as? LowOrangeCollectionViewCell else {
                 preconditionFailure("incorrect cell")
                 
             }
-            cell.setupCell(with: shownNumbersViewModel.number(at: indexPath.row))
+            cell.setupCell(with: showType.number)
             return cell
         }
     }
